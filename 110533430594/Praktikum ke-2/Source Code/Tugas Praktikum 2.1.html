@@ -1,0 +1,73 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
+<html>
+<head>
+<title>Tugas 2</title>
+<style type="text/css">
+<!--
+#Div {
+position:absolute;
+width:200px;
+height:27px;
+z-index:1;
+left: 575px;
+top: 200px;
+}
+.style1 {
+color: blue;
+font-weight: bold;
+}
+-->
+</style>
+</head>
+<body>
+<form method="post" action="Tugas Praktikum 2.2.php">
+<h3 align="center" class="style1">Tugas 2</h3>
+<table width="327" align="center" border="0" bgcolor="#FFFFFF">
+<tr>
+
+<td width="121" style="text-align:center"><b>Baris</b></td>
+<td width="196"><strong>:</strong>
+<input name="JmlBaris" type="text" id="JmlBaris" onKeyUp="getmax();" onfocus="this.select();"></td>
+</tr>
+<tr>
+<td style="text-align:center"><label><b>Kolom</b></label></td>
+<td><strong>:</strong>
+<input name="JmlKolom" type="text" id="JmlKolom" onKeyUp="getmax();" onfocus="this.select();"></td>
+</tr>
+<tr>
+<td style="text-align:center"><b>Sel</b></td>
+<td><strong>:</strong>
+<input name="JmlSel" type="text" id="JmlSel" onKeyUp="getmax();" onFocus="this.select();"></td>
+</tr>
+<tr>
+<td style="text-align:center"><b>Sel Maks</b> </td>
+<td><strong>:</strong>
+<input name="SelMak" type="text" id="SelMak" disabled="disabled" style="text-align:center"></td>
+</tr>
+</table>
+<div id="Div">
+<input type="submit" name="Done" value="Done">
+<input type="reset" name="Clear" value="Clear">
+</div>
+</form>
+
+<script language="JavaScript" type="text/javascript">
+<!--
+function getmax() {
+var B = parseInt(document.getElementById('JmlBaris').value);
+var K = parseInt(document.getElementById('JmlKolom').value);
+var S = parseInt(document.getElementById('JmlSel').value);
+var SelMak = document.getElementById('SelMak');
+var total = 'N/A';
+total = B * K;
+SelMak.value = new String(total);
+if (S > total)
+{
+alert('Peringatan, Nilai Sel Maksimal = ' + total);
+document.getElementById('JmlSel').value = new String();
+}
+}
+//-->
+</script>
+</body>
+</html>
