@@ -1,0 +1,43 @@
+<!DOCTYPE HTML>
+<head>
+<title>Demo Login Form</title>
+<script type="text/javascript" language="javascript" src="validasi.js"></script>
+<style type="text/css">
+#wrapper {
+	background: #eff8fb;
+	margin: 100px auto;
+	width: 320px;
+	border:5px solid #84dff9;
+	}
+</style>
+</head>
+<body bgcolor=#cfeaf5>
+<div id="wrapper">
+<form id="LoginForm" name="LoginForm"  action="login.php" onSubmit="return otent()" method="post">
+<table align="center">
+<tr>
+<td><h1><font color=#5fc2de> Login </font></h1> </td><br />
+</tr>
+</table>
+<hr border color="#84dff" width="280" /></br>
+<table align="center">
+<tr>
+<td>Username</td>
+</tr>
+<tr>
+<td><input type="text" id="Username" name="Username" onfocus="this.value='';"/></td>
+</tr>
+<tr>
+<td>Password</td>
+</tr>
+<tr>
+<td><input type="text" id="Password" name="Password" onfocus="this.value='';"/> </td>
+</tr>
+<tr>
+<td><input type="submit" name="submit" value="LOGIN" /> </td>
+</tr>
+</table>
+</form>
+</div>
+</body>
+</html>
