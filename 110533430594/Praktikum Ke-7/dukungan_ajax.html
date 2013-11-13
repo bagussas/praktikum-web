@@ -1,0 +1,37 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Periksa Dukungan Ajax</title>
+</head>
+<script language="JavaScript" type="text/javascript">
+/**
+* Menciptakan objek XMLHttpRequest
+* @return true jika berhasil
+*/
+function createXmlHttpRequest() {
+// Untuk menyimpan reference ke objek XMLHttpRequest
+var xmlHttp = false;
+if (window.ActiveXObject) {
+// Jika menggunakan Internet Explorer
+xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+} else {
+// Untuk Mozilla dan browser lain
+xmlHttp = new XMLHttpRequest();
+}
+if (!xmlHttp) {
+alert("Gagal Menciptakan Objek XMLHttpRequest");
+} else {
+return xmlHttp;
+}
+}
+// Menciptakan objek XMLHttpRequest
+var xmlHttp = createXmlHttpRequest();
+if (xmlHttp) {
+alert("OK, Support Ajax :-)");
+} else {
+alert("Dukungan Ajax tidak ditemukan :-(");
+}
+</script>
+<body>
+</body>
+</html>

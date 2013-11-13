@@ -1,0 +1,58 @@
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD HTML 4.0 Transitional//EN">
+<html xmlns="http://www.w3.org/1999/xhtml" xml:lang="en" lang="en">
+<head>
+<title>Pemrosesan Menggunakan Ajax</title>
+</head>
+<script language="JavaScript" type="text/javascript">
+var xmlHttp = false;
+function createXmlHttpRequest() {
+var xmlHttp = false;
+if (window.ActiveXObject) {
+// Jika menggunakan Internet Explorer
+xmlHttp = new ActiveXObject("Microsoft.XMLHTTP");
+} else {
+// Untuk Mozilla dan browser lain
+xmlHttp = new XMLHttpRequest();
+}
+if (!xmlHttp) {
+alert("Gagal Menciptakan Objek XMLHttpRequest");
+} else {
+return xmlHttp;
+}
+}
+function prosesData(url, param) {
+xmlHttp = createXmlHttpRequest();
+if (xmlHttp.readyState == 4 ||
+xmlHttp.readyState == 0) {
+// Eksekusi source dari server
+xmlHttp.open("GET", url + param, true);
+xmlHttp.onreadystatechange = handleRespon;
+// Membuat request
+xmlHttp.send(null);
+} else {
+setTimeout("prosesData(url, param)", 1000);
+}
+}
+function handleRespon() {
+if (xmlHttp.readyState == 4) {
+if (xmlHttp.status == 200) {
+document.getElementById('hasil').
+innerHTML = xmlHttp.responseText;
+} else {
+alert("Error: " + xmlHttp.statusText);
+}
+}
+}
+</script>
+</head>
+<body>
+<form name="my_form">
+Nama: <input type="text" name="nama" /> <br />
+<input type="button" value="OK"
+onclick="prosesData('pemrosesan_ajax.php?nama=',my_form.nama.value);" />
+</form>
+Respon Server:<br />
+<!-- Penting, ini untuk menampilkan hasil -->
+<div id="hasil"></div>
+</body>
+</html>
